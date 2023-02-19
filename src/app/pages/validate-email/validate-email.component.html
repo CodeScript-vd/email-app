@@ -1,0 +1,33 @@
+<ng-container>
+  <div class="control">
+    <label for="">Correo:</label>
+    <input [(ngModel)]="email" type="text">
+  </div>
+  <div class="send-button">
+    <button class="button" (click)="send()" [disabled]="!email">
+      <span
+        *ngIf="loading; else text"
+        class="icon-spinner"
+        [ngClass]="{ loading: loading }"
+      ></span>
+      <ng-template #text>Enviar</ng-template>
+    </button>
+  </div>
+
+  <br />
+  
+  <ng-container *ngIf="response">
+
+    <div class="detail-chip">
+      <span class="chip-label">Estado:</span>
+      <span class="chip chip-{{ status }}">{{ status | uppercase }}</span>
+    </div>
+
+    <div *ngIf="coincidence" class="detail-chip">
+      <span class="chip-label">Coincidencia:
+      </span><span class="chip chip-valid">{{ coincidence }}</span> 
+    </div>
+    
+  </ng-container>
+
+</ng-container>

@@ -1,0 +1,32 @@
+<ng-container>
+  
+  <div class="control">
+    <label for="">Teléfono:</label>
+    <input [(ngModel)]="phone" type="number">
+  </div>
+  <div class="send-button">
+    <button class="button" (click)="send()" [disabled]="!phone">
+      <span
+        *ngIf="loading; else text"
+        class="icon-spinner"
+        [ngClass]="{ loading: loading }"
+      ></span>
+      <ng-template #text>Enviar</ng-template>
+    </button>
+  </div>
+
+  <br />
+
+  <ng-container *ngIf="response">
+
+    <div class="detail-chip">
+      <span class="chip-label">STATUS:</span>
+      <span class="chip chip-{{ status}}">{{ status | uppercase }}</span>
+    </div>
+
+    <div *ngIf="operator" class="detail-chip">
+      <span class="chip-label">OPERADOR:
+      </span><span class="chip chip-valid">{{ operator | uppercase }}</span> 
+    </div>
+  </ng-container>
+</ng-container>

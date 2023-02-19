@@ -3,3 +3,4 @@ export interface SendEmailRequest {
   subject: string;
   message: string;
 }
+

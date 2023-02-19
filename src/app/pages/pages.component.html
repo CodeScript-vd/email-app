@@ -1,0 +1,30 @@
+
+<section class="page-container">
+  <div class="email-wrapper">
+    <div class="title">
+      <div class="title-option" routerLink="send-email" routerLinkActive="active" (click)="changeTab('send-email')">
+        <span class="icon icon-send" routerLinkActive="icon-send-solid"></span> Envío de correo
+      </div>
+      <div class="title-option" routerLink="validate-email" routerLinkActive="active" (click)="changeTab('validate-email')">
+        <span class="icon icon-mail-checked" routerLinkActive="icon-mail-checked-solid" style="font-size: 25px;"></span> Validación de correo
+      </div>
+      <div class="title-option" routerLink="validate-phone" routerLinkActive="active" (click)="changeTab('validate-phone')">
+        <span class="icon icon-phone" routerLinkActive="icon-phone-solid"></span> Validación de teléfono
+      </div>
+    </div>
+    <div class="container-message">
+      <div class="control">
+        <label>Api:</label>
+        <select [(ngModel)]="changeApiValue" (change)="changeApi()">
+          <option *ngFor="let option of optionsApi" [value]="option.value">
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
+      <router-outlet></router-outlet>  
+    </div>
+  </div>
+  <div class="json-viewer">
+    <ngx-json-viewer *ngIf="provideApi.jsonData" [json]="provideApi.jsonData"></ngx-json-viewer>
+  </div>
+</section>

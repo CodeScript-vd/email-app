@@ -27,14 +27,34 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon {
-  color: white;
-  font-size: 22px;
-}
-
-.icon-envelope {
+.icon-phone {
   &:before {
-    content: $icon-envelope; 
+    content: $icon-phone; 
+  }
+}
+.icon-phone-solid {
+  &:before {
+    content: $icon-phone-solid; 
+  }
+}
+.icon-mail-checked {
+  &:before {
+    content: $icon-mail-checked; 
+  }
+}
+.icon-mail-checked-solid {
+  &:before {
+    content: $icon-mail-checked-solid; 
+  }
+}
+.icon-send {
+  &:before {
+    content: $icon-send; 
+  }
+}
+.icon-send-solid {
+  &:before {
+    content: $icon-send-solid; 
   }
 }
 .icon-spinner {
@@ -47,4 +67,3 @@
     content: $icon-warning; 
   }
 }
-

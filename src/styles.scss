@@ -1,9 +1,234 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'icomoon_var';
+@import 'icomoon';
+
 body {
   margin: 0;
   overflow: hidden;
   font-family: Open sans;
 }
 
-@import 'icomoon_var';
-@import 'icomoon';
+html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+$primary: #4B56D2;
+
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes in {
+  0% {
+    left: 0;
+    right: auto;
+    opacity: 1;
+  }
+  50% {
+    left: 0;
+    right: auto;
+    opacity: 0;
+    scale: 1;
+  }
+  50.1% {
+    left: auto;
+    right: 0;
+    opacity: 0;
+    scale: 0.85;
+  }
+  100% {
+    color: #23c79a;
+    left: auto;
+    right: 0;
+    opacity: 0;
+    scale: 0.85;
+  }
+}
+
+.email-wrapper {
+  border-radius: 15px;
+  background: white;
+  width: 45rem;
+}
+
+.title {
+  background: $primary;
+  padding: .5rem 1.2rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .icon {
+    font-size: 20px;
+  }
+  &-option {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    &.active {
+      background-color: darkblue;
+      opacity: 0.7;
+    }
+  }
+}
+
+.container-message {
+  position: relative;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.control {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  label {
+    width: 65px;
+    font-weight: 600;
+  }
+  input {
+    width: 35rem;
+    height: 56px;
+    font-family: inherit;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #919191;
+    outline: none;
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+.message {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  label {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  textarea {
+    margin: 10px;
+    outline: none;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+
+.send-button {
+  margin: 2rem 0 1rem;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  .button {
+    padding: 10px 16px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: $primary;
+    border: transparent;
+    width: 10rem;
+    cursor: pointer;
+  }
+}
+
+.detail-chip {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.chip {
+  border-radius: 8px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  &-valid {
+    background-color: #23c79a;
+  }
+  &-invalid {
+    background-color: #dc2626;
+  }
+  &-risky {
+    background-color: #ffa613;
+  }
+  &-unknown {
+    background-color: #ffa613;
+  }
+  &-label {
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 8rem;
+  }
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5rem;
+  height: 100%;
+  gap: 2rem;
+}
+
+.json-viewer {
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 32rem;
+  background-color: white;
+  min-height: 16.5rem;
+}
+
+
+.icon-spinner {
+  animation: fa-spin 2s infinite linear;
+  display: block;
+}
+
+
+:is(input:focus, input.has-value)
+~ label {
+  animation: in 0.5s both;
+}
+
+input:focus,
+input.has-value {
+  border-bottom: 2px solid #23c79a;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  padding: 5px 16px;
+  border-radius: 5px;
+  min-width: 10rem;
+}
+
+button[disabled] {
+  cursor: default !important;
+  opacity: 0.5;
+}
